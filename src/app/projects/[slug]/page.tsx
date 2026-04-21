@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, ExternalLink, Github, Calendar, CheckCircle2, AlertCircle, TrendingUp, Lightbulb } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Github, Calendar, CheckCircle2, AlertCircle, TrendingUp, Lightbulb, type LucideIcon } from 'lucide-react'
 import { getProjectBySlug, projects } from '@/data/projects'
 import { Badge } from '@/components/ui/Badge'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
@@ -31,7 +31,7 @@ function SectionCard({
   color,
   children,
 }: {
-  icon: React.ComponentType<{ size?: number; className?: string }>
+  icon: LucideIcon
   title: string
   color: string
   children: React.ReactNode
