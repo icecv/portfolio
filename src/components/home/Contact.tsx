@@ -35,7 +35,7 @@ export function Contact() {
                 { icon: Github, href: personal.github, label: 'GitHub' },
                 { icon: Linkedin, href: personal.linkedin, label: 'LinkedIn' },
                 { icon: Twitter, href: personal.twitter, label: 'Twitter' },
-              ].map(({ icon: Icon, href, label }) => (
+              ].filter((item) => item.href).map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}

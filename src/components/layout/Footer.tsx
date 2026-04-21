@@ -53,7 +53,7 @@ export function Footer() {
                 { icon: Linkedin, href: personal.linkedin, label: 'LinkedIn' },
                 { icon: Twitter, href: personal.twitter, label: 'Twitter' },
                 { icon: Mail, href: `mailto:${personal.email}`, label: 'Email' },
-              ].map(({ icon: Icon, href, label }) => (
+              ].filter((item) => item.href).map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}

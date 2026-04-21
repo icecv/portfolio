@@ -105,14 +105,6 @@ export function Hero() {
               >
                 <Github size={18} />
               </a>
-              <a
-                href={personal.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 transition-all"
-              >
-                <Linkedin size={18} />
-              </a>
             </div>
           </motion.div>
 

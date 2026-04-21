@@ -1,20 +1,20 @@
 import type { Metadata } from 'next'
-import { MapPin, Mail, Github, Linkedin } from 'lucide-react'
+import Image from 'next/image'
+import { MapPin, Mail, Github } from 'lucide-react'
 import { personal } from '@/data/personal'
-import { Badge } from '@/components/ui/Badge'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { PageTransition } from '@/components/ui/PageTransition'
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: `Learn more about ${personal.name} — ${personal.title}.`,
+  title: '关于',
+  description: `了解更多关于 ${personal.name} 的信息——${personal.title}。`,
 }
 
 const categoryColors: Record<string, string> = {
-  'AI & LLM': 'bg-violet-50 text-violet-700 border border-violet-200',
-  Frontend: 'bg-blue-50 text-blue-700 border border-blue-200',
-  Backend: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
-  Infrastructure: 'bg-amber-50 text-amber-700 border border-amber-200',
+  'AI & 大模型': 'bg-violet-50 text-violet-700 border border-violet-200',
+  'Agent 开发': 'bg-indigo-50 text-indigo-700 border border-indigo-200',
+  '编程语言': 'bg-blue-50 text-blue-700 border border-blue-200',
+  '工具': 'bg-emerald-50 text-emerald-700 border border-emerald-200',
 }
 
 export default function AboutPage() {
@@ -26,12 +26,15 @@ export default function AboutPage() {
             {/* Sidebar */}
             <AnimatedSection className="lg:col-span-1">
               <div className="lg:sticky lg:top-28">
-                {/* Avatar placeholder */}
-                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-3xl font-bold mb-5">
-                  {personal.name
-                    .split(' ')
-                    .map((n) => n[0])
-                    .join('')}
+                {/* Avatar */}
+                <div className="w-28 h-28 rounded-2xl overflow-hidden mb-5 bg-gradient-to-br from-blue-100 to-indigo-100">
+                  <Image
+                    src="/avatar.jpg"
+                    alt={personal.name}
+                    width={112}
+                    height={112}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 <h1 className="text-2xl font-bold text-slate-900">{personal.name}</h1>
@@ -58,25 +61,37 @@ export default function AboutPage() {
                     <Mail size={15} />
                     {personal.email}
                   </a>
-                  <a
-                    href={personal.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 transition-colors"
-                  >
-                    <Github size={15} />
-                    GitHub
-                  </a>
-                  <a
-                    href={personal.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 transition-colors"
-                  >
-                    <Linkedin size={15} />
-                    LinkedIn
-                  </a>
+                  {personal.github && (
+                    <a
+                      href={personal.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 transition-colors"
+                    >
+                      <Github size={15} />
+                      GitHub
+                    </a>
+                  )}
                 </div>
+
+                {/* Certifications */}
+                {personal.certifications && personal.certifications.length > 0 && (
+                  <div className="mt-6">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-2">
+                      证书
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {personal.certifications.map((cert) => (
+                        <span
+                          key={cert}
+                          className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200"
+                        >
+                          {cert}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </AnimatedSection>
 
@@ -98,38 +113,8 @@ export default function AboutPage() {
                 </div>
               </AnimatedSection>
 
-              {/* Experience */}
-              <AnimatedSection delay={0.12}>
-                <div>
-                  <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-6">
-                    工作经历
-                  </h2>
-                  <div className="space-y-6">
-                    {personal.experience.map((exp, i) => (
-                      <div key={i} className="flex gap-5">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-100 to-blue-100 flex items-center justify-center text-indigo-600 font-bold text-sm">
-                          {exp.company[0]}
-                        </div>
-                        <div>
-                          <div className="flex flex-wrap items-center gap-2">
-                            <h3 className="font-semibold text-slate-900">{exp.role}</h3>
-                            <span className="text-xs text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">
-                              {exp.period}
-                            </span>
-                          </div>
-                          <p className="text-sm text-indigo-600 font-medium mt-0.5">{exp.company}</p>
-                          <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                            {exp.description}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </AnimatedSection>
-
               {/* Education */}
-              <AnimatedSection delay={0.16}>
+              <AnimatedSection delay={0.12}>
                 <div>
                   <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-6">
                     教育背景
@@ -152,7 +137,7 @@ export default function AboutPage() {
               </AnimatedSection>
 
               {/* Skills */}
-              <AnimatedSection delay={0.2}>
+              <AnimatedSection delay={0.16}>
                 <div>
                   <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-6">
                     技能与工具

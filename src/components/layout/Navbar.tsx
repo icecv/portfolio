@@ -44,7 +44,7 @@ export function Navbar() {
             href="/"
             className="font-bold text-lg bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
-            Alex Chen
+            乔卓骁
           </Link>
 
           {/* Desktop Nav */}
@@ -72,7 +72,7 @@ export function Navbar() {
 
           {/* CTA */}
           <a
-            href="mailto:alex@example.com"
+            href="mailto:qiaozhuoxiao@163.com"
             className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-500 hover:to-indigo-500 transition-all duration-200 shadow-sm"
           >
             联系我
@@ -113,7 +113,7 @@ export function Navbar() {
               })}
               <li className="pt-2 px-4">
                 <a
-                  href="mailto:alex@example.com"
+                  href="mailto:qiaozhuoxiao@163.com"
                   className="block text-center px-4 py-2.5 rounded-lg text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
                 >
                   联系我
