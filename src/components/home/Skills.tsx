@@ -11,7 +11,7 @@ const categoryColors: Record<string, string> = {
 
 export function Skills() {
   return (
-    <section className="py-24 bg-white/60">
+    <section className="py-24 bg-white/40 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionTitle

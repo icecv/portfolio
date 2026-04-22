@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { BackgroundOrbs } from '@/components/ui/BackgroundOrbs'
 import { personal } from '@/data/personal'
 
 const inter = Inter({
@@ -49,9 +50,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <BackgroundOrbs />
+        <div className="relative z-10">
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   )

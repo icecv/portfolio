@@ -9,7 +9,7 @@ export function FeaturedProjects() {
   const projects = getFeaturedProjects()
 
   return (
-    <section className="py-24 bg-white/50 backdrop-blur-sm">
+    <section className="py-24 bg-white/40 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">

@@ -20,19 +20,7 @@ const item = {
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
-      {/* Grid pattern background */}
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage: 'radial-gradient(#cbd5e1 1px, transparent 1px)',
-          backgroundSize: '28px 28px',
-        }}
-      />
-
-      {/* Gradient blobs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-indigo-100 to-violet-100 rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full blur-3xl opacity-50" />
+    <section className="relative min-h-screen flex items-center overflow-hidden">
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
         <motion.div variants={container} initial="hidden" animate="show" className="max-w-3xl">
