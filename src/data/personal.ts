@@ -16,10 +16,19 @@ export const personal = {
     '目前主要在探索如何把大模型能力转化为可用的产品，而不仅仅是"演示级 demo"。',
   ],
   skills: {
-    'AI & 大模型': ['LangChain', 'OpenAI API', 'Anthropic Claude', 'RAG'],
-    'Agent 开发': ['Prompt Engineering', 'AI Agent', 'LLM API/RAG', 'Vibe Coding'],
+    'AI & Agent': [
+      'OpenAI GPT',
+      'Anthropic Claude',
+      'RAG',
+      'Prompt Engineering',
+      'AI Agent',
+      'OpenClaw',
+      'LLM API/RAG',
+      'Vibe Coding',
+    ],
     '编程语言': ['Python', 'C'],
-    '工具': ['Cursor', 'VS Code', 'Git'],
+    '工具': ['Cursor', 'VS Code', 'Git', 'Coze', 'OpenClaw'],
+    '英语能力': ['雅思 6.5'],
   },
   experience: [] as Array<{
     company: string
@@ -39,5 +48,4 @@ export const personal = {
       period: '2019 – 2023',
     },
   ],
-  certifications: ['雅思 6.5'],
 }

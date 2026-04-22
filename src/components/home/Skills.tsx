@@ -3,15 +3,15 @@ import { SectionTitle } from '@/components/ui/SectionTitle'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 
 const categoryColors: Record<string, string> = {
-  'AI & LLM': 'bg-violet-50 text-violet-700 border-violet-200',
-  Frontend: 'bg-blue-50 text-blue-700 border-blue-200',
-  Backend: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-  Infrastructure: 'bg-amber-50 text-amber-700 border-amber-200',
+  'AI & Agent': 'bg-violet-50 text-violet-700 border-violet-200',
+  '编程语言': 'bg-blue-50 text-blue-700 border-blue-200',
+  '工具': 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  '英语能力': 'bg-amber-50 text-amber-700 border-amber-200',
 }
 
 export function Skills() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionTitle
@@ -24,7 +24,7 @@ export function Skills() {
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {Object.entries(personal.skills).map(([category, skills], i) => (
             <AnimatedSection key={category} delay={i * 0.08}>
-              <div className="p-6 rounded-2xl border border-slate-100 bg-slate-50/60 hover:border-indigo-200 hover:bg-white transition-all duration-300">
+              <div className="p-6 rounded-2xl border border-slate-200/80 bg-white/80 backdrop-blur-sm hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-50/50 transition-all duration-300">
                 <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
                   {category}
                 </h3>

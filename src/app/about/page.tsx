@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 }
 
 const categoryColors: Record<string, string> = {
-  'AI & 大模型': 'bg-violet-50 text-violet-700 border border-violet-200',
-  'Agent 开发': 'bg-indigo-50 text-indigo-700 border border-indigo-200',
+  'AI & Agent': 'bg-violet-50 text-violet-700 border border-violet-200',
   '编程语言': 'bg-blue-50 text-blue-700 border border-blue-200',
   '工具': 'bg-emerald-50 text-emerald-700 border border-emerald-200',
+  '英语能力': 'bg-amber-50 text-amber-700 border border-amber-200',
 }
 
 export default function AboutPage() {
@@ -27,13 +27,13 @@ export default function AboutPage() {
             <AnimatedSection className="lg:col-span-1">
               <div className="lg:sticky lg:top-28">
                 {/* Avatar */}
-                <div className="w-28 h-28 rounded-2xl overflow-hidden mb-5 bg-gradient-to-br from-blue-100 to-indigo-100">
+                <div className="w-36 h-48 rounded-2xl overflow-hidden mb-5 bg-gradient-to-br from-blue-100 to-indigo-100">
                   <Image
                     src="/avatar.jpg"
                     alt={personal.name}
-                    width={112}
-                    height={112}
-                    className="w-full h-full object-cover"
+                    width={144}
+                    height={192}
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
 
@@ -74,24 +74,6 @@ export default function AboutPage() {
                   )}
                 </div>
 
-                {/* Certifications */}
-                {personal.certifications && personal.certifications.length > 0 && (
-                  <div className="mt-6">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-2">
-                      证书
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {personal.certifications.map((cert) => (
-                        <span
-                          key={cert}
-                          className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200"
-                        >
-                          {cert}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             </AnimatedSection>
 
