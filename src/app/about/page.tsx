@@ -104,8 +104,14 @@ export default function AboutPage() {
                   <div className="space-y-4">
                     {personal.education.map((edu, i) => (
                       <div key={i} className="flex gap-5">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-violet-100 to-purple-100 flex items-center justify-center text-violet-600 font-bold text-sm">
-                          {edu.school[0]}
+                        <div className="flex-shrink-0 w-12 h-12 rounded-xl overflow-hidden bg-white border border-slate-200 shadow-sm flex items-center justify-center p-1">
+                          <Image
+                            src={edu.image}
+                            alt={edu.school}
+                            width={44}
+                            height={44}
+                            className="w-full h-full object-contain"
+                          />
                         </div>
                         <div>
                           <h3 className="font-semibold text-slate-900">{edu.school}</h3>

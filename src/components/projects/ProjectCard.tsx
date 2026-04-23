@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, ExternalLink, Github } from 'lucide-react'
 import { Project } from '@/data/projects'
 import { Badge } from '@/components/ui/Badge'
@@ -16,20 +17,27 @@ export function ProjectCard({ project }: ProjectCardProps) {
       href={`/projects/${project.slug}`}
       className="group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-50 transition-all duration-300"
     >
-      {/* Gradient header */}
-      <div className={`relative h-36 bg-gradient-to-br ${project.gradient} flex items-end p-5`}>
-        <div className="absolute inset-0 bg-black/5" />
-        <div className="relative flex items-center justify-between w-full">
+      {/* Cover image */}
+      <div className="relative h-44 overflow-hidden bg-slate-100">
+        <Image
+          src={project.coverImage}
+          alt={project.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        {/* 底部渐变遮罩，保证 badge 可读 */}
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 to-transparent" />
+        <div className="absolute bottom-0 inset-x-0 flex items-center justify-between px-4 pb-3">
           <span
             className={`px-2.5 py-0.5 rounded-full text-xs font-semibold backdrop-blur-sm ${
               project.status === 'completed'
-                ? 'bg-white/20 text-white'
-                : 'bg-amber-400/20 text-amber-100'
+                ? 'bg-white/25 text-white'
+                : 'bg-amber-400/30 text-amber-100'
             }`}
           >
             {project.status === 'completed' ? '已完成' : '进行中'}
           </span>
-          <span className="text-xs text-white/70">{formatDateShort(project.date)}</span>
+          <span className="text-xs text-white/80">{formatDateShort(project.date)}</span>
         </div>
       </div>
 

@@ -41,11 +41,13 @@ export const personal = {
       school: 'University of Liverpool',
       degree: 'Advanced Computer Science 理学硕士',
       period: '2024 – 2025',
+      image: '/schools/liverpool.png',
     },
     {
       school: '大连外国语大学',
       degree: '计算机科学与技术 工学学士',
       period: '2019 – 2023',
+      image: '/schools/dlufl.png',
     },
   ],
 }

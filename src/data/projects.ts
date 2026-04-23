@@ -29,6 +29,7 @@ export interface Project {
   githubUrl?: string
   demoUrl?: string
   gradient: string
+  coverImage: string
   detail: ProjectDetail
 }
 
@@ -46,6 +47,7 @@ export const projects: Project[] = [
     status: 'completed',
     githubUrl: 'https://github.com/icecv/Interview-Coach',
     gradient: 'from-blue-500 to-indigo-600',
+    coverImage: '/projects/interview-coach.png',
     detail: {
       background:
         '求职准备阶段，真实面试机会有限，传统刷题平台无法模拟多角色对话的真实面试压力。大多数候选人只能靠背答案，而非真正练习在不同类型面试官面前的临场表现。我想构建一个系统，让人可以在"低风险"环境里体验"高压力"的真实面试场景。',
@@ -115,6 +117,7 @@ export const projects: Project[] = [
     status: 'completed',
     githubUrl: 'https://github.com/icecv/Interactive-fiction-engine',
     gradient: 'from-violet-500 to-purple-600',
+    coverImage: '/projects/fiction-engine.png',
     detail: {
       background:
         '市面上的互动小说工具要么过于简单（只支持线性叙事），要么学习成本极高（需要掌握完整的游戏引擎）。我想构建一个"中间层"：让创作者用简洁的脚本语言就能写出支持分支剧情、变量系统、骰子机制的复杂故事，同时拥有完整的多媒体展示能力。',
@@ -184,6 +187,7 @@ export const projects: Project[] = [
     status: 'completed',
     githubUrl: 'https://github.com/icecv/Game-Industry-Data-Visualization-Website-Dashboard',
     gradient: 'from-cyan-500 to-blue-600',
+    coverImage: '/projects/game-dashboard.png',
     detail: {
       background:
         '游戏产业的讨论往往停留在销量和口碑层面，很少有人把游戏数据与国家经济发展（GDP、互联网普及率）结合起来分析。我想探索一个问题：一个国家的经济发展水平，会影响其游戏市场的构成和偏好吗？这个项目就是为了用数据来回答这个问题。',

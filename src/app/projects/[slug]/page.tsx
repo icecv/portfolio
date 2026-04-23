@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, ExternalLink, Github, Calendar, CheckCircle2, AlertCircle, TrendingUp, Lightbulb, type LucideIcon } from 'lucide-react'
 import { getProjectBySlug, projects } from '@/data/projects'
 import { Badge } from '@/components/ui/Badge'
@@ -55,7 +56,19 @@ export default function ProjectDetailPage({ params }: Props) {
 
   return (
     <PageTransition>
-      <div className="pt-24 pb-20 min-h-screen bg-slate-50/50">
+      <div className="pt-24 pb-20 min-h-screen relative">
+        {/* 像素画背景 */}
+        <div className="fixed inset-0 -z-10">
+          <Image
+            src={project.coverImage}
+            alt=""
+            fill
+            className="object-cover object-center"
+            quality={90}
+            priority
+          />
+          <div className="absolute inset-0 bg-white/82" />
+        </div>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back */}
           <AnimatedSection>
@@ -263,3 +276,4 @@ export default function ProjectDetailPage({ params }: Props) {
     </PageTransition>
   )
 }
+
