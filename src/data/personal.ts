@@ -1,9 +1,9 @@
 export const personal = {
   name: '乔卓骁',
   title: 'AI 领域研究与应用者',
-  tagline: 'Building AI products that actually work.',
+  tagline: 'Build ideas into products. Let them speak.',
   description:
-    '我专注于设计和落地 AI 原生产品——从多智能体系统到 RAG 知识库，再到 LLM 工作流。致力于打通前沿 AI 能力与真实用户价值之间的鸿沟。',
+    '我专注于把一个新想法迅速变成真实可用的东西。借助 AI 工具快速构建、快速验证、快速迭代——从零到第一个可演示的版本。不断地追赶技术，为了更好的生产力。',
   email: 'qiaozhuoxiao@163.com',
   github: 'https://github.com/icecv',
   linkedin: '',
