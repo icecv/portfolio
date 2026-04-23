@@ -40,11 +40,11 @@ export function Hero() {
             variants={item}
             className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.08]"
           >
-            Building{' '}
+            Build ideas into{' '}
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
-              AI products
+              products.
             </span>{' '}
-            that actually work.
+            Let them speak.
           </motion.h1>
 
           {/* Subtitle */}
