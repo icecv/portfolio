@@ -25,18 +25,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        {/* 底部渐变遮罩，保证 badge 可读 */}
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 to-transparent" />
-        <div className="absolute bottom-0 inset-x-0 flex items-center justify-between px-4 pb-3">
-          <span
-            className={`px-2.5 py-0.5 rounded-full text-xs font-semibold backdrop-blur-sm ${
-              project.status === 'completed'
-                ? 'bg-white/25 text-white'
-                : 'bg-amber-400/30 text-amber-100'
-            }`}
-          >
-            {project.status === 'completed' ? '已完成' : '进行中'}
-          </span>
+        {/* 底部渐变遮罩 */}
+        <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/30 to-transparent" />
+        <div className="absolute bottom-0 inset-x-0 flex justify-end px-4 pb-2.5">
           <span className="text-xs text-white/80">{formatDateShort(project.date)}</span>
         </div>
       </div>
